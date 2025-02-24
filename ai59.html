@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字人AI生成器</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 2px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        /* 复制控件样式 */
+        .copy-section {
+            margin: 2px 0;
+        }
+        .copy-text {
+            color: #007BFF;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .copy-text:hover {
+            opacity: 0.8;
+        }
+        #copyText {
+            position: absolute;
+            left: -9999px;
+        }
+
+        /* 提示信息样式 */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 2px 24px;
+            border-radius: 4px;
+            display: none;
+            z-index: 1000;
+        }
+
+        /* 简化后的iframe容器 */
+        .iframe-container {
+            width: 100%;
+            max-width: 375px;
+            height: 90vh;
+            max-height: 600px;
+
+            margin: 2px auto;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+
+        .mobile-screen {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toast" id="toast"></div>
+
+    <div class="copy-section">
+        <span class="copy-text" onclick="copyToClipboard()">点击复制客服微信号</span> ·
+        <input type="text" id="copyText" value="rsk616" readonly>
+        <a href="https://fuas4zjom1.feishu.cn/docx/UTPHdZLrhoKFuqxoRwUcayPynnc" 
+           target="_blank" 
+           class="copy-text">
+           更多软件详细介绍
+        </a>
+    </div>
+
+    <div class="iframe-container">
+        <iframe class="mobile-screen" 
+                src="https://ai59.doujia5799.top/addons/xz_aihost/h5/?shareopenid=xz#/"
+                allow="fullscreen"
+                loading="eager">
+        </iframe>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const text = document.getElementById('copyText').value;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('微信号已复制，请到微信添加好友');
+            }).catch(() => {
+                showToast('复制失败，请手动长按微信号复制');
+            });
+        }
+
+        function showToast(message, duration = 2000) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, duration);
+        }
+
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+</body>
+</html>
