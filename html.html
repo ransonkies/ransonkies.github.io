@@ -210,6 +210,95 @@ alert('复制失败，请手动复制微信号：' + copyText);
 </div>
 </body>
 
+
+<body>
+    <!-- 创建一个按钮，用于触发拍照 -->
+    <button id="takePhotoButton">拍照</button>
+    <!-- 创建一个隐藏的文件输入框 -->
+    <input type="file" id="takePhotoInput" accept="image/*" capture="camera" style="display: none;">
+    <!-- 用于显示拍摄的照片 -->
+    <img id="photoDisplay" src="#" alt="拍摄的照片" style="max-width: 100%;">
+
+    <script>
+        // 获取按钮、文件输入框和图片元素
+        const takePhotoButton = document.getElementById('takePhotoButton');
+        const takePhotoInput = document.getElementById('takePhotoInput');
+        const photoDisplay = document.getElementById('photoDisplay');
+
+        // 为按钮添加点击事件监听器
+        takePhotoButton.addEventListener('click', function () {
+            // 模拟点击文件输入框
+            takePhotoInput.click();
+        });
+
+        // 为文件输入框添加 change 事件监听器
+        takePhotoInput.addEventListener('change', function (event) {
+            // 获取用户选择的文件
+            const file = event.target.files[0];
+            if (file) {
+                // 创建一个 FileReader 对象
+                const reader = new FileReader();
+                // 当文件读取完成时触发的事件
+                reader.onload = function (e) {
+                    // 将读取的文件内容赋值给图片的 src 属性
+                    photoDisplay.src = e.target.result;
+                };
+                // 以 DataURL 格式读取文件
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+<body>
+    <!-- 创建一个文件输入框，用于触发拍摄视频功能 -->
+    <input type="file" id="videoInput" accept="video/*" capture="camcorder">
+    <!-- 用于播放拍摄的视频 -->
+    <video id="videoPlayer" controls style="max-width: 100%;"></video>
+
+    <script>
+        // 获取文件输入框和视频播放器元素
+        const videoInput = document.getElementById('videoInput');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        // 为文件输入框添加 change 事件监听器
+        videoInput.addEventListener('change', function (event) {
+            // 获取用户选择的视频文件
+            const file = event.target.files[0];
+            if (file) {
+                // 创建一个对象 URL，用于在视频播放器中播放视频
+                const videoURL = URL.createObjectURL(file);
+                // 将对象 URL 赋值给视频播放器的 src 属性
+                videoPlayer.src = videoURL;
+            }
+        });
+    </script>
+</body>
+<body>
+    <!-- 用于显示摄像头画面的视频元素 -->
+    <video id="videoElement" autoplay playsinline></video>
+    <button id="startCameraButton">启动摄像头</button>
+
+    <script>
+        const videoElement = document.getElementById('videoElement');
+        const startCameraButton = document.getElementById('startCameraButton');
+
+        // 启动摄像头的函数
+        async function startCamera() {
+            try {
+                // 请求访问用户的摄像头，获取视频流
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                // 将视频流连接到 video 元素上
+                videoElement.srcObject = stream;
+            } catch (error) {
+                console.error('访问摄像头时出现错误:', error);
+            }
+        }
+
+        // 为按钮添加点击事件监听器
+        startCameraButton.addEventListener('click', startCamera);
+    </script>
+</body>
+
 </html>
 
 
