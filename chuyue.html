@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多媒体分发界面</title>
+<style>
+* {
+margin: 0;
+padding: 0 0 5px 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #e6f1ff, #000);
+min-height: 10vh;
+display: grid;
+place-items: center;
+}
+
+.container {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+padding: 20px;
+}
+.container2 {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+padding: 20px;
+}
+.card {
+   background: white;
+ <!-- padding: 20px;
+border-radius: 15px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: transform 0.3s ease; -->
+}
+
+.card:hover {
+transform: translateY(-3px);
+}
+
+.icon {
+width: 320px;
+height: 180px;
+border-radius: 15px;
+margin-bottom: 10px;
+}
+.icon2 {
+width: 210px;
+height: 120px;
+border-radius: 15px;
+margin-bottom: 10px;
+}
+.text {
+font-size: 1.2rem;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<div class="icon" style="height: 480px; background-image: url('img/fadouyin.png'); background-size: cover;"></div><div class="text">长按发抖音</div></div>
+
+<div class="card">
+<div class="icon" style="height: 480px; background-image: url('img/faxhs.png'); background-size: cover;"></div><div class="text">长按发小红书</div>
+</div>
+</div>
+</body>
+
+
+<body>
+<div class="container">
+<!-- 发视频种草部分 -->
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy.svg'); background-size: cover;"></div>
+<!--div class="text">发抖音</div-->
+</div>
+
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/xhs_video.jpg'); background-size: cover;"></div>
+<!--div class="text">发小红书视频</div-->
+</div>
+
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/ks.svg'); background-size: cover;"></div>
+<!--div class="text">发快手</div-->
+</div>
+
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/pyq_video.png'); background-size: cover;"></div>
+<!--div class="text">发朋友圈视频</div-->
+</div>
+
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/shipinhao.png'); background-size: cover;"></div>
+<!--div class="text">发视频号</div-->
+</div>
+
+<!-- 打卡点评收藏部分 -->
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dz_dp.svg'); background-size: cover;"></div>
+<!--div class="text">点评+打卡</div-->
+</div>
+
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy_dp.svg'); background-size: cover;"></div>
+<!--div class="text">点评+收藏</div-->
+</div>
+
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/gd_dp.svg'); background-size: cover;"></div>
+<!--div class="text">点评+收藏</div-->
+</div>
+
+<div class="card">
+<div class="icon" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/bd_dp.jpg'); background-size: cover;"></div>
+<!--div class="text">点评+收藏</div-->
+</div>
+</div>
+</body>
+
+
+<body>
+<div class="container">
+<div class="card">
+<div id="copyText2" data-value="WIFI密码" style="display: none;"></div>
+<span class="copy-text" onclick="copyToClipboard(this)">
+<div class="icon" style="background-image: url('img/wifi.svg'); background-size: cover;"></div>
+</span>
+</div>
+<div class="card">
+<div id="copyText" data-value="rsk616" style="display: none;"></div>
+<span class="copy-text" onclick="copyToClipboard(this)">
+<div class="icon" style="background-image: url('img/jwx.svg'); background-size: cover;"></div>
+</span>
+</div>
+</div>
+
+<script>
+async function copyToClipboard(clickedElement) {
+const parentCard = clickedElement.closest('.card');
+const hiddenDiv = parentCard.querySelector('div[id^="copyText"]');
+const copyText = hiddenDiv.dataset.value;
+
+try {
+await navigator.clipboard.writeText(copyText);
+if (hiddenDiv.id === 'copyText2') {
+alert("WIFI密码已复制，请连接粘贴WIFI密码即可。");
+} else {
+alert("微信号已复制，请到微信添加好友。");
+}
+} catch (err) {
+console.error('复制失败:', err);
+if (hiddenDiv.id === 'copyText2') {
+alert('复制失败，请手动复制WIFI密码：' + copyText);
+} else {
+alert('复制失败，请手动复制微信号：' + copyText);
+}
+}
+}
+</script>
+	</body>
+<body>
+<div class="container2">
+		<div class="card">
+<div class="icon2" style="background-image: url('img/dy_gz.png'); background-size: cover;"></div>
+<!--div class="text">关注抖音</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('img/ks_gz.png'); background-size: cover;"></div>
+<!--div class="text">关注快手</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('img/xhs_gz.png'); background-size: cover;"></div>
+<!--div class="text">关注小红书</div-->
+</div>
+</div>
+</body>
+<body>
+<div class="container2">
+		<div class="card">
+<div class="icon2" style="background-image: url('img/dytg_icon.svg'); background-size: cover;"></div>
+<!--div class="text">抖音团购</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('img/mttg2_icon.svg'); background-size: cover;"></div>
+<!--div class="text">美团团购</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('img/dzdptg_icon.svg'); background-size: cover;"></div>
+<!--div class="text">大众点评团购</div-->
+</div>
+</div>
+</body>
+<body>
+<div class="container2">
+<!-- 发视频种草部分 -->
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy.svg'); background-size: cover;"></div>
+<!--div class="text">发抖音</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/xhs_video.jpg'); background-size: cover;"></div>
+<!--div class="text">发小红书视频</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/ks.svg'); background-size: cover;"></div>
+<!--div class="text">发快手</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/pyq_video.png'); background-size: cover;"></div>
+<!--div class="text">发朋友圈视频</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/shipinhao.png'); background-size: cover;"></div>
+<!--div class="text">发视频号</div-->
+</div>
+
+<!-- 打卡点评收藏部分 -->
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dz_dp.svg'); background-size: cover;"></div>
+<!--div class="text">点评+打卡</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy_dp.svg'); background-size: cover;"></div>
+<!--div class="text">点评+收藏</div-->
+</div>
+
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/gd_dp.svg'); background-size: cover;"></div>
+<!--div class="text">点评+收藏</div-->
+</div>
+<div class="card">
+<div class="icon2" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/bd_dp.jpg'); background-size: cover;"></div>
+<!--div class="text">点评+收藏</div-->
+</div>
+		</div>
+</body>
+
+
+
+
+
+</html>
