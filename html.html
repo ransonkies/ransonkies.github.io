@@ -5,47 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>多媒体分发界面</title>
 <style>
-  body {
-    padding: 0 0 0 0;
+body {
 background: linear-gradient(135deg, #e6f1ff, #000);
-    max-width: 500px;
-    min-width: 500px;
+max-width: 500px;
+min-width: 500px;
 }
-    .img-row {
-    display: flex;
-    gap: 10px;
-    margin: 0 auto 10px;
-    }
-    
-    .two-column {
-        width: 50%;
-        height: 150px;
-        background-size: cover;
-        background-position: center;
-        border: 0px solid white;
-      border-radius: 15px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .three-column {
-        width: 33.33%;
-        height: 90px;
-        background-size: cover;
-        background-position: center;
-        border: 0px solid white;
-      border-radius: 15px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .img-link {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-  .two-column:hover {
+.img-row {
+display: flex;
+gap: 10px;
+margin: 0 auto 10px;
+}
+
+.two-column {
+width: 50%;
+height: 150px;
+background-size: cover;
+background-position: center;
+border: 0px solid white;
+border-radius: 15px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.three-column {
+width: 33.33%;
+height: 90px;
+background-size: cover;
+background-position: center;
+border: 0px solid white;
+border-radius: 15px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.img-link {
+display: block;
+width: 100%;
+height: 100%;
+}
+.two-column:hover {
 transform: translateY(-3px);
 transition: transform 0.3s ease;
-    
+
 }
-  .three-column:hover {
+.three-column:hover {
 transform: translateY(-3px);
 transition: transform 0.3s ease;
 }
@@ -53,11 +52,12 @@ transition: transform 0.3s ease;
 </style>
 </head>
 
-
+<div class="img-row"></div>
 <body>
 <div class="img-row">
-<div class="two-column" style="height: 480px; background-image: url('img/fadouyin.png'); background-size: cover;"></div><div class="text"><a href="img/fadouyin.png" target="_blank"><!-- 长按发抖音 --></a></div>
-<div class="two-column" style="height: 480px; background-image: url('img/faxhs.png'); background-size: cover;"></div><div class="text"><a href="img/faxhs.png" target="_blank"><!-- 长按发小红书 --></a></div>
+<div class="two-column" style="height: 480px; background-image: url('img/fadouyin.png');"><a href="img/fadouyin.png" class="img-link"></a><!-- 长按发抖音 --></div>
+
+<div class="two-column" style="height: 480px; background-image: url('img/faxhs.png');"><a href="img/faxhs.png" class="img-link"><!-- 长按发小红书 --></a></div>
 </div>
 </body>
 
@@ -65,36 +65,38 @@ transition: transform 0.3s ease;
 <body>
 <div class="img-row">
 <!-- 发视频种草部分 -->
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy.svg'); background-size: cover;"><!--div class="text">发抖音</div--><a href="https://zncy.mxdx888.com/h5/pages/release/release?iceTaskId=652340488060997" target="_blank"></a></div>
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/xhs_video.jpg'); background-size: cover;"><!--div class="text">发小红书视频</div--><a href="https://zncy.mxdx888.com/h5/pages/release/xhs?iceTaskId=652340488060997" target="_blank"></a></div>
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy.svg');"><!--div class="text">发抖音</div--><a href="https://zncy.mxdx888.com/h5/pages/release/release?iceTaskId=652340488060997" class="img-link"></a></div>
+
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/xhs_video.jpg');"><!--div class="text">发小红书视频</div--><a href="https://zncy.mxdx888.com/h5/pages/release/xhs?iceTaskId=652340488060997" class="img-link"></a></div>
 </div>
 
 <div class="img-row">
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/ks.svg'); background-size: cover;"></div>
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/ks.svg');"></div>
 <!--div class="text">发快手</div-->
-
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/pyq_video.png'); background-size: cover;"></div>
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/pyq_video.png');"></div>
 <!--div class="text">发朋友圈视频</div-->
 </div>
 
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/shipinhao.png'); background-size: cover;"></div>
+
+<div class="img-row">
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/shipinhao.png');"></div>
 <!--div class="text">发视频号</div-->
 
-<!-- 打卡点评收藏部分 -->
 
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dz_dp.svg'); background-size: cover;"></div>
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dz_dp.svg');"></div>
 <!--div class="text">点评+打卡</div-->
-
-
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy_dp.svg'); background-size: cover;"></div>
+</div>
+<div class="img-row">
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy_dp.svg');"></div>
 <!--div class="text">点评+收藏</div-->
 
 
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/gd_dp.svg'); background-size: cover;"></div>
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/gd_dp.svg');"></div>
 <!--div class="text">点评+收藏</div-->
 
-
-<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/bd_dp.jpg'); background-size: cover;"></div>
+</div>
+<div class="img-row">
+<div class="two-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/bd_dp.jpg');"></div>
 <!--div class="text">点评+收藏</div-->
 </div>
 </body>
@@ -102,24 +104,20 @@ transition: transform 0.3s ease;
 
 <body>
 <div class="img-row">
-
+<div class="two-column" style="background-image: url('img/wifi.svg');" onclick="copyToClipboard(this)">
 <div id="copyText2" data-value="WIFI密码" style="display: none;"></div>
-<span class="copy-text" onclick="copyToClipboard(this)">
-<div class="two-column" style="background-image: url('img/wifi.svg'); background-size: cover;"></div>
-</span>
-
-
-<div id="copyText" data-value="rsk616" style="display: none;"></div>
-<span class="copy-text" onclick="copyToClipboard(this)">
-<div class="two-column" style="background-image: url('img/jwx.svg'); background-size: cover;"></div>
-</span>
 </div>
 
+<div class="two-column" style="background-image: url('img/jwx.svg');" onclick="copyToClipboard(this)">
+    <div id="copyText" data-value="rsk616" style="display: none;"></div>
+</div>
+
+</div>
 
 <script>
 async function copyToClipboard(clickedElement) {
-const parenttwo-column = clickedElement.closest('.two-column');
-const hiddenDiv = parenttwo-column.querySelector('div[id^="copyText"]');
+const parentCard = clickedElement.closest('.two-column');
+const hiddenDiv = parentCard.querySelector('div[id^="copyText"]');
 const copyText = hiddenDiv.dataset.value;
 
 try {
@@ -147,71 +145,61 @@ alert('复制失败，请手动复制微信号：' + copyText);
 
 <body>
 <div class="img-row">
-<div class="three-column" style="background-image: url('img/dy_gz.png'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('img/dy_gz.png');"></div>
 <!--div class="text">关注抖音</div-->
 
-<div class="three-column" style="background-image: url('img/ks_gz.png'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('img/ks_gz.png');"></div>
 <!--div class="text">关注快手</div-->
 
-<div class="three-column" style="background-image: url('img/xhs_gz.png'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('img/xhs_gz.png');"></div>
 <!--div class="text">关注小红书</div-->
 </div>
 </body>
 
 <body>
 <div class="img-row">
-<div class="three-column" style="background-image: url('img/dytg_two-column.svg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('img/dytg_icon.svg');"></div>
 <!--div class="text">抖音团购</div-->
-</div>
 
-<div class="three-column" style="background-image: url('img/mttg2_two-column.svg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('img/mttg2_icon.svg');"></div>
 <!--div class="text">美团团购</div-->
-</div>
 
-<div class="three-column" style="background-image: url('img/dzdptg_two-column.svg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('img/dzdptg_icon.svg');"></div>
 <!--div class="text">大众点评团购</div-->
 </div>
-</div>
 </body>
+
 <body>
 <div class="img-row">
 <!-- 发视频种草部分 -->
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy.svg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy.svg');"></div>
 <!--div class="text">发抖音</div-->
-</div>
 
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/xhs_video.jpg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/xhs_video.jpg');"></div>
 <!--div class="text">发小红书视频</div-->
-</div>
 
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/ks.svg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/ks.svg');"></div>
 <!--div class="text">发快手</div-->
 </div>
-
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/pyq_video.png'); background-size: cover;"></div>
+<div class="img-row">
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/pyq_video.png');"></div>
 <!--div class="text">发朋友圈视频</div-->
-</div>
 
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/shipinhao.png'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/shipinhao.png');"></div>
 <!--div class="text">发视频号</div-->
-</div>
 
-<!-- 打卡点评收藏部分 -->
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dz_dp.svg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dz_dp.svg');"></div>
 <!--div class="text">点评+打卡</div-->
 </div>
+<div class="img-row">
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy_dp.svg');"></div>
+<!--div class="text">点评+收藏</div-->
 
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/dy_dp.svg'); background-size: cover;"></div>
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/gd_dp.svg');"></div>
+<!--div class="text">点评+收藏</div-->
+<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/bd_dp.jpg');"></div>
 <!--div class="text">点评+收藏</div-->
 </div>
-
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/gd_dp.svg'); background-size: cover;"></div>
-<!--div class="text">点评+收藏</div-->
-</div>
-<div class="three-column" style="background-image: url('https://fast.douqutui.com/public/dydqtshoppc/pypimg/bd_dp.jpg'); background-size: cover;"></div>
-<!--div class="text">点评+收藏</div-->
-</div>
-		</div>
 </body>
 
 </html>
